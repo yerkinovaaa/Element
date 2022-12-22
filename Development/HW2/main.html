@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Main Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    :root{
+	    --bg-primary: #4649FF;
+	    --color-primary: linear-gradient(0deg, rgba(187,87,131,1) 14%, rgba(37,56,255,1) 66%);
+    }
+
+    body {
+	    font-family: 'Raleway', sans-serif;
+	    margin: 0px;
+	    padding: 0px;
+	    font-size: 15px;
+    }
+
+    a, a:hover, a:focus {
+	    text-decoration: none;
+    }
+
+    ul {
+	    margin: 0px;
+	    padding: 0px;
+    }
+
+    li {
+	    list-style: none;
+    }
+
+    img {
+	    max-width: 100%;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+	    font-weight: 700;
+    }
+
+    h2 {
+	    font-size: 44px;
+	    margin-bottom: 15px;
+    }
+
+    h3 {
+	    font-size: 24px;
+	    line-height: 32px;
+	    font-weight: 600;
+    }
+
+    section, .container{
+	    position: relative;
+    }
+
+    .lead {
+        font-weight: 500;
+    }
+
+    header {
+        background: var(--bg-primary);
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }  
+
+    header .navbar-expand-lg .navbar-nav .nav-link {
+        color: #FFF;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 24px;
+    }
+
+    .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+        color: #FFF;
+    }
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+        color: #FFF;
+    }
+
+    .hero-banner {
+	    background: url("images/national-cancer-institute-cP6Z_VKMCuo-unsplash.jpg") no-repeat;
+	    background-size: cover;
+	    padding: 200px 0px;
+	    min-height: 500px;
+	    position: relative;
+    }
+
+    .hero-banner:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(0deg, rgba(187 87 131 / 91%) 12%, rgba(37 56 255 / 91%) 66%);
+    }
+
+    .banner-text-wrap h1 {
+	    font-size:60px;
+	    font-weight: 700;
+    }
+
+    .btn {
+        padding: 8px 24px;
+        border-radius: 0px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .btn-white {
+        background: #FFF;
+        color: var(--color-primary);
+    }
+    .banner-text-wrap {
+        max-width: 600px;
+    }
+
+    .banner-text-wrap  p {
+        margin-bottom: 23px;
+        margin-top: 15px;
+    }
+
+    section.features-section {
+        margin-top: -90px;
+    }
+    .bg1 {
+        background: rgb(32,73,162);
+        background: linear-gradient(0deg, rgba(32,73,162,1) 44%, rgba(168,57,110,1) 100%);
+    }
+
+    .bg2 {
+        background: rgb(32,73,162);
+        background: linear-gradient(0deg, rgba(32,73,162,1) 44%, rgba(168,57,110,1) 100%);
+    }
+
+    .features-box h3, .features-box p {
+        color: #FFF;
+    }
+
+    .features-box {
+        padding: 40px;
+    }
+
+    section.about-section {
+        padding: 100px 0px;
+    }
+
+    .btn-primary {
+        background-color: var(--bg-primary);
+        border-color: var(--bg-primary);
+    }
+        
+    .about-media {
+        border: 10px solid var(--color-primary);
+    }
+
+    .section-title {
+        margin-bottom: 60px;
+    }
+
+    section.services-section {
+        padding: 100px 0px 50px;
+        background: rgb(32,73,162);
+        background: linear-gradient(0deg, rgba(32,73,162,1) 44%, rgba(168,57,110,1) 100%);
+    }
+
+    .services-box {
+        background: #FFF;
+        padding: 30px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .services-box h3 {
+        margin: 15px 0px 20px;
+    }
+
+    .bg-overlay:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.6);
+    }
+
+    textarea {
+        height: 224px !important;
+    }
+
+    section.blog-section {
+        padding: 100px 0px;
+    }
+
+    .blog-info h3 a {
+        color: #000;
+    }
+
+    ul.meta li {
+        display: inline-block;
+    }
+
+    .blog-info p {
+        margin-top: 20px;
+    }
+
+    .blog-media {
+        margin-bottom: 17px;
+    }
+
+    .blog-box {
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,.11);
+    }
+
+    footer {
+        font-family: 'Raleway', sans-serif;
+        background: var(--bg-primary);
+        padding: 100px 0px;
+        color: #FFF;
+    }
+
+    ul.footer-address li i {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        font-size: 22px;
+    }
+
+    ul.footer-address li {
+        position: relative;
+        padding-left: 35px;
+    }
+
+    ul.footer-address li a {
+        color: #FFF;
+    }
+
+    .footer-widget h3 {
+        margin-bottom: 30px;
+    }
+
+    ul.footer-menu li a {
+        color: #FFF;
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+
+    @media (min-width:992px) and (max-width:1400px){
+        header .navbar-expand-lg .navbar-nav .nav-link {
+            padding: 10px 11px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width:991px){
+        .navbar-toggler-icon {
+            background: #FFF;
+            padding: 20px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }	
+
+        .section-title {
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .banner-text-wrap h1 {
+            font-size: 39px;
+        }
+
+        .hero-banner {
+            padding: 137px 0px;
+            min-height: auto;
+        }
+
+        .booking-section {
+            padding: 40px 0px;
+        }
+
+        footer {
+            padding: 40px 10px;
+        }
+
+        section.blog-section {
+            padding: 40px 0px;
+        }
+
+        section.services-section {
+            padding: 30px 0px;
+        }
+
+        .services-box {
+            margin-bottom: 20px;
+        }
+
+        .about-media {
+            margin-bottom: 30px;
+        }
+
+        .features-box {
+            margin-bottom: 30px;
+        }
+
+        section.about-section {
+            padding: 30px 0px 40px;
+        }	  
+    }
+
+    .footer-distributed {
+        background: rgb(187,87,131);
+        background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .footer-distributed .footer-left {
+        width: 30%;
+    }
+
+    .footer-distributed h3 {
+        color: rgb(255, 255, 255);
+        font-family: 'Raleway', sans-serif;
+        font-size: 60px;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-left img {
+        width: 30%;
+    }
+
+    .footer-distributed .footer-links {
+        color: #ffffff;
+        margin: 20px 0 12px;
+    }
+
+    .footer-distributed .footer-links a {
+        display: inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+        color: white;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-center {
+        width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+        background-color: #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+        font-size: 17px;
+        line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+        display: inline-block;
+        color: #ffffff;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+        display: block;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+        color: white;
+        text-decoration: none;
+        ;
+    }
+
+    .footer-distributed .footer-right {
+        width: 30%;
+    }
+
+    .footer-distributed .footer-company-about {
+        line-height: 20px;
+        color: white;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+        display: block;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color: #33383b;
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+  </style>
+  <body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#home-section">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about-section">About</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link " href="#services-section">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#blog-section">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="registration.html">Register</a>
+                            </li>    
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner" id="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-text-wrap">
+                        <h1 class="text-white">Welcome to Our Site</h1>
+                        <br>
+                        <h5 class="text-white">In our hospital you can find the best medical services.</h5>
+                        <br>
+                        <h5 style="color: white;">Our Address:</h5>
+                        <p style="color: white;"> where will be comfortable for you 🦦.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="row gx-0">
+                <div class="col-md-4">
+                    <div class="features-box bg1">
+                        <img src="images/calendar.png" alt="calendar">
+                        <h3>24 Hours Services</h3>
+                        <p>We are ready to receive you at any time ☘️</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="features-box bg2">
+                        <img src="images/staff.png" alt="staff">
+                        <h3>Professional Staff</h3>
+                        <p>The best doctors from all over the world (Also we have best instructor and mentor in Element🌸)</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section"  id="about-section">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-md-6">
+                        <div class="about-media">
+                        <img src="https://images.unsplash.com/photo-1643780668909-580822430155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="about" >
+                    </div>
+                </div>
+                <div class="col-md-6">
+                        <div  class="about-info">
+                            <h3>About Us</h3>
+                            <p class="lead">Our hospital has all kinds of services for you and you will receive the highest quality of care.</p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release</p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title text-center" style="color: white;">Services</h2>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <img src="https://www.pngitem.com/pimgs/m/103-1032462_brain-emoji-png-transparent-png.png" width="80" alt="neurology">
+                        <h3>Neurology</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <img src="https://freepngimg.com/download/icon/1000551-eye-emoji-icon-download-free.png" width="78" alt="eyecare">
+                        <h3>Eyes care</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <img src="images/pulmonary-icon.png" alt="pulmonary">
+                        <h3>Pulomonary</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                </div>  
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <img src="https://icons.veryicon.com/png/o/miscellaneous/iview30-ios-style/ios-heart-5.png" width="59" alt="cardiology">
+                        <h3>Cardiology</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                </div>  
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <img src="https://img.icons8.com/ios/500/tooth.png" width="60" alt="dental">
+                        <h3>Dental Care</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="services-box">
+                        <img src="images/hepatology-icon.png" alt="hepatology">
+                        <h3>Hepatology</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section" id="blog-section">
+        <div class="container">
+            <div class="row">
+                <div  class="col-md-12">
+                    <h2 class="section-title text-center">News</h2>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-box" style="background: rgb(187,87,131);
+                    background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);">
+                        <div class="blog-media">
+                            <img src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20221120105749/ri/1350/src/images/news/ImageForNews_731619_16690030753978709.jpg" height="195" alt="blog1">
+                        </div>
+                        <div class="blog-info">
+                            <h3>
+                                <a href="https://www.news-medical.net/news/20221120/The-role-of-bacteria-in-cancer-growth.aspx" style="color: white;">The role of bacteria in cancer growth.</a>
+                            </h3>
+                            <ul class="meta">
+                                <li style="color: white;"> <i class="fa fa-calendar" aria-hidden="true" style="color: white;"></i> 20 Nov 2022 </li>
+                            </ul>
+                            <p style="color: white;">Tumor-associated microbiota is an important component of the tumor microenvironment (TME) across 33 types of human cancer. However, little evidence is available regarding the spatial distribution and localization of these microbes in tumor cells. The abundance of this bacteria differed between CRC patients.  </p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="blog-box" style="background: rgb(187,87,131);
+                    background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);">
+                        <div class="blog-media">
+                            <img src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20170406041441/ri/450/picture/2017/4/DNA_in_a_perspective_view_on_a_clean_and_clear_background.-ktsdesign_14894a0337b74c038108dc4fa6e7f61a-620x480.jpg" alt=blog2">
+                        </div>
+                        <div class="blog-info">
+                            <h3><a href="https://www.news-medical.net/news/20221121/Scientists-provide-metrics-for-organ-development.aspx" style="color: white;">Scientists provide metrics for organ development.</a></h3>
+                            <ul class="meta">
+                                <li style="color: white;"> <i class="fa fa-calendar" aria-hidden="true" style="color: white;"></i> 21 Nov 2022 </li>
+                            </ul>
+                            <p style="color: white;">Organs in the human body have complex networks of fluid-filled tubes and loops. They come in different shapes and their three-dimensional structures are differently connected to each other, depending on the organ.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="blog-box" style="background: rgb(187,87,131);
+                    background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);">
+                        <div class="blog-media">
+                            <img src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20220929112745/ri/1350/src/images/Article_Images/ImageForArticle_23152_16644652641407528.jpg" alt="blog3">
+                        </div>
+                        <div class="blog-info">
+                            <h3><a href="https://www.news-medical.net/life-sciences/Using-AI-to-Preserve-Privacy-in-Biomedicine.aspx" style="color: white;">How can we use AI to Preserve Privacy in Biomedicine?</a></h3>
+                            <ul class="meta">
+                                <li style="color: white;"> <i class="fa fa-calendar" aria-hidden="true" style="color: white;"></i> 18 Nov 2022 </li>
+                            </ul>
+                            <p style="color: white;">Artificial Intelligence (AI) is an emerging and innovative field set to change every industry at its core. AI utilizes data available to learn how to solve tasks; it greatly surpasses the human brain in terms of efficiency and accuracy.</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="blog-box" style="background: rgb(187,87,131);
+                    background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);">
+                        <div class="blog-media">
+                            <img src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20170410095848/ri/450/picture/2017/4/shutterstock_390538711_6b3c40fdd32742caa54307db3553cab1-620x480.jpg" alt="blog1">
+                        </div>
+                        <div class="blog-info">
+                            <h3>
+                                <a href="https://www.news-medical.net/health/The-Psychological-Strain-of-Chronic-Physical-Illness.aspx" style="color: white;">The Psychological Strain of Chronic Physical Illness.</a>
+                            </h3>
+                            <ul class="meta">
+                                <li style="color: white;"> <i class="fa fa-calendar" aria-hidden="true" style="color: white;"></i> 20 Nov 2022 </li>
+                            </ul>
+                            <p style="color: white;">Chronic physical illness is psychologically draining to those experiencing it, and psychiatric disorders such as depression and anxiety are more common amongst such individuals</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="blog-box" style="background: rgb(187,87,131);
+                    background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);">
+                        <div class="blog-media">
+                            <img src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20220926090401/ri/1000/src/images/Article_Images/ImageForArticle_23142_16641974412913716.jpg" alt=blog2">
+                        </div>
+                        <div class="blog-info">
+                            <h3><a href="https://www.news-medical.net/life-sciences/Using-Flow-Cytometry-to-Understand-Physiology-of-Disease.aspx" style="color: white;">Using Flow Cytometry to Understand Physiology of Disease.</a></h3>
+                            <ul class="meta">
+                                <li style="color: white;"> <i class="fa fa-calendar" aria-hidden="true" style="color: white;"></i> 21 Nov 2022 </li>
+                            </ul>
+                            <p style="color: white;">By definition, flow cytometry refers to the immunophenotyping technique in which cell suspensions are stained with specific, fluorescently labeled antibodies. These cell suspensions can be derived.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="blog-box" style="background: rgb(187,87,131);
+                    background: linear-gradient(170deg, rgba(187,87,131,1) 17%, rgba(37,56,255,1) 95%);">
+                        <div class="blog-media">
+                            <img src="https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20221012071145/ri/1000/src/images/Article_Images/ImageForArticle_23193_16655731043886842.jpg" alt="blog3">
+                        </div>
+                        <div class="blog-info">
+                            <h3><a href="https://www.news-medical.net/health/How-does-the-Brain-Change-as-we-Age.aspx" style="color: white;">How does the Brain Change as we Age?</a></h3>
+                            <ul class="meta">
+                                <li style="color: white;"> <i class="fa fa-calendar" aria-hidden="true" style="color: white;"></i> 18 Nov 2022 </li>
+                            </ul>
+                            <p style="color: white;">Aging is an inevitable facet of life, and yet the biology underlying this actuality remains poorly understood. Despite impacting every organ in the body, aging cannot be attributed simply to a single pathway, and the mechanisms surrounding the significant changes in the brain are less clear. The causes and mechanisms...</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <p class="footer-links">
+                <a href="#home-section">Home</a> |
+                <a href="#about-section">About</a> |
+                <a href="#services-section">Services</a> |
+                <a href="#blog-section">News</a>
+            </p>
+            <p class="footer-company-name">© 2022 by Aksaule</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-github"></i>
+                <a href="https://github.com/yerkinovaaa"><p>Github</p></a>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:aksaule22@mail.ru">Mail Me</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About us</span> Reserve a spacious room, set the menu, choose the drinks and invite guests. Delight in our service!</p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript" > </script>	
+    <script src="js/bootstrap.min.js" type="text/javascript" > </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" type="text/javascript" > </script>	
+    <script src="js/custom.js" type="text/javascript" > </script>
+
+    <!-- <script>
+        $("a[href^='#']").click(function(e) {
+            e.preventDefault();
+            
+            var position = $($(this).attr("href")).offset().top;
+        
+            $("body, html").animate({
+                scrollTop: position
+            })
+        },
+
+        $('.reviews-slide').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            responsive: {
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        })
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
