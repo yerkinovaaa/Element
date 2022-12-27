@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>About</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="second.css">
+    <style>
+      .logo_name {
+        margin: 10px;
+      }
+
+      nav {
+        background-image: linear-gradient(rgba(245, 246, 252, 0.52), rgba(35, 122, 194, 1)), url(images/image4.jpg);
+      }
+
+      section {
+        background-image: linear-gradient(rgba(245, 246, 252, 0.52), rgba(35, 122, 194, 1)), url(images/image4.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+        </div>
+        <span class="logo_name">ArcBuild</span>
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="index.html">
+              <i class="uil uil-home"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="second.html">
+              <i class="uil uil-notes"></i>
+              <span class="link-name">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html">
+              <i class="uil uil-signin"></i>
+              <span class="link-name">Login</span>
+            </a>
+          </li>
+          <li>
+            <a href="registration.html">
+              <i class="uil uil-user"></i>
+              <span class="link-name">Register</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li>
+            <a href="login.html">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Log Out</span>
+            </a>
+          </li>
+          <li class="mode">
+            <!-- <a href="registration.html">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a> -->
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <section class="pl" id="about1" >
+        <div class="row">
+          <div class="pl-col">
+            <img src="images/image4.jpg" alt="smth1" width="" style="width: 500px;"/>
+          </div>
+          <div class="pl-col">
+            <img src="images/image6.jpg" alt="smth2" style="width: 500px;"/>
+          </div>
+          <div class="pl-col">
+            <img src="images/image3.jpg" alt="smth3" style="width: 500px;"/>
+          </div>
+        </div>
+      </section>
+      <section class="pl" id="about2" style="margin-top: -120px;">
+        <div class="row">
+          <div class="pl-col">
+            <img src="images/image5.jpg" alt="smth1" width="" style="width: 500px;"/>
+          </div>
+          <div class="pl-col">
+            <img src="images/image7.jpg" alt="smth2" style="width: 500px; height: 280px;"/>
+          </div>
+          <div class="pl-col">
+            <img src="images/image12.jpg" alt="smth3" style="width: 500px; height: 280px;"/>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script>
+      const body = document.querySelector("body");
+      modeToggle = body.querySelector(".mode-toggle");
+      sidebar = body.querySelector("nav");
+      sidebarToggle = body.querySelector(".sidebar-toggle");
+
+      modeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+      });
+
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      })
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

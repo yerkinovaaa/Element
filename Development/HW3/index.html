@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArcBuild</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li>
+              <a href="second.html">About</a>
+            </li>
+            <li>
+              <a href="login.html">Login</a>
+            </li>
+            <li>
+              <a href="registration.html">Registration</a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="text-box">
+        <h1>Make your dreams come true <br> with <span style="color: #141E61;">ArcBuild</span></h1>
+        <p>
+          We don't build a future for a few years. We build for life. A secure future.
+        </p>
+        <a href="mailto:mail@arcbuild.com" class="hero-btn">Contact Us</a>
+      </div>
+    </section>
+
+    <section class="pl" id="about">
+      <h1>Our Works</h1>
+      <div class="row">
+        <div class="pl-col">
+          <img src="images/image9.jpg" alt="smth1" width=""/>
+          <div class="lk">
+            <h3>We</h3>
+          </div>
+        </div>
+        <div class="pl-col">
+          <img src="images/image10.jpg" alt="smth2" />
+          <div class="lk">
+            <h3>Are</h3>
+          </div>
+        </div>
+        <div class="pl-col">
+          <img src="images/image11.jpg" alt="smth3" />
+          <div class="lk">
+            <h3>One</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer" id="contacts">
+      <p>by Aksaule. My GitHub: <a href="https://github.com/yerkinovaaa">yerkinovaaa</a></p>
+    </section>
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
