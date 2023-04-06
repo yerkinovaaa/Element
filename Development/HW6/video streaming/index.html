@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Video Blur</title>
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main role="main">
+            <div class="py-5">
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col-10">
+                            <center>
+                                <div class="card shadow-sm" style="border: gray 3px solid; margin: 4px; border-style: groove;">
+                                    <center>
+                                        <video id="video" width="440" height="320" style="-webkit-transform: scaleX(-1);
+                                        transform: scaleX(-1); margin-top: 20px;" autoplay playsinline></video>
+                                    </center>
+                                    <center>
+                                        <canvas hidden id="canvas"></canvas>
+                                    </center>
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="text-decoration: overline #FF3028; padding: 2px;">Video Stream</h5>
+                                    </div>
+                                </div>
+                                <div class="justify-content-between align-items-center" style="margin-top: 20px;">
+                                    <div class="btn-group btn-group-sm">
+                                        <button id="start-btn" type="button" class="btn btn-sm btn-outline-success">Start</button>
+                                        <button id="blur-btn" type="button" class="btn btn-sm btn-outline-warning" disabled>Blur</button>
+                                        <button id="unblur-btn" type="button" class="btn btn-sm btn-outline-warning" hidden>Unblur</button>
+                                        <button id="stop-btn" type="button" class="btn btn-sm btn-outline-danger" disabled>Stop</button>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 10px;"><b style="font-family: 'Delicious Handrawn', cursive; font-size: 30px;">What is video streaming?</b><br>
+                                    Video streaming is a continuous transmission of video files from a server to a client. Video streaming enables users to view videos online without having to download them.
+                                    Streamed video content can include movies, TV shows, YouTube videos and livestreamed content. Services such as Netflix and Hulu have had great success in streaming videos to subscribers.</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script>
+            const videoElement = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+
+            const startBtn = document.getElementById('start-btn');
+            const stopBtn = document.getElementById('stop-btn');
+            const blurBtn = document.getElementById('blur-btn');
+            const unblurBtn = document.getElementById('unblur-btn');
+
+            const ctx = canvas.getContext('2d');
+
+            startBtn.addEventListener('click', e => {
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+
+            unblurBtn.disabled = false;
+            blurBtn.disabled = false;
+
+            startVideoStream();
+            });
+
+            stopBtn.addEventListener('click', e => {
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+
+            unblurBtn.disabled = true;
+            blurBtn.disabled = true;
+
+            unblurBtn.hidden = true;
+            blurBtn.hidden = false;
+
+            videoElement.hidden = false;
+            canvas.hidden = true;
+
+            stopVideoStream();
+            });
+
+            blurBtn.addEventListener('click', e => {
+            blurBtn.hidden = true;
+            unblurBtn.hidden = false;
+
+            videoElement.hidden = true;
+            canvas.hidden = false;
+
+            loadBodyPix();
+            });
+
+            unblurBtn.addEventListener('click', e => {
+            blurBtn.hidden = false;
+            unblurBtn.hidden = true;
+
+            videoElement.hidden = false;
+            canvas.hidden = true;
+            });
+
+            videoElement.onplaying = () => {
+            canvas.height = videoElement.videoHeight;
+            canvas.width = videoElement.videoWidth;
+            };
+
+            function startVideoStream() {
+            navigator.mediaDevices.getUserMedia({video: true, audio: false})
+                .then(stream => {
+                videoElement.srcObject = stream;
+                videoElement.play();
+                })
+                .catch(err => {
+                startBtn.disabled = false;
+                blurBtn.disabled = true;
+                stopBtn.disabled = true;
+                alert(`Following error occured: ${err}`);
+                });
+            }
+
+            function stopVideoStream() {
+            const stream = videoElement.srcObject;
+
+            stream.getTracks().forEach(track => track.stop());
+            videoElement.srcObject = null;
+            }
+
+            function loadBodyPix() {
+            options = {
+                multiplier: 0.75,
+                stride: 32,
+                quantBytes: 4
+            }
+            bodyPix.load(options)
+                .then(net => perform(net))
+                .catch(err => console.log(err))
+            }
+
+            async function perform(net) {
+
+            while (startBtn.disabled && blurBtn.hidden) {
+                const segmentation = await net.segmentPerson(video);
+
+                const backgroundBlurAmount = 6;
+                const edgeBlurAmount = 2;
+                const flipHorizontal = true;
+
+                bodyPix.drawBokehEffect(
+                canvas, videoElement, segmentation, backgroundBlurAmount,
+                edgeBlurAmount, flipHorizontal);
+                }
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+    </body>
+</html>
